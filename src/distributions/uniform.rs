@@ -271,6 +271,7 @@ impl<X: SampleUniform> From<::core::ops::Range<X>> for Uniform<X> {
 }
 
 #[cfg(rustc_1_27)]
+#[feature(inclusive_range_methods)]
 impl<X: SampleUniform> From<::core::ops::RangeInclusive<X>> for Uniform<X> {
     fn from(r: ::core::ops::RangeInclusive<X>) -> Uniform<X> {
         Uniform::new_inclusive(r.start(), r.end())
